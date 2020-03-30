@@ -12,7 +12,7 @@ public class ResultView {
     private static final String COMMA = ",";
     private static final String COLON = " : ";
 
-    public void printRacingScores(List<Cars> cars) {
+    private void printRacingScores(List<Cars> cars) {
         System.out.println("실행 결과");
         for (Cars score : cars) {
             printScore(score.getCars());
@@ -36,7 +36,7 @@ public class ResultView {
         System.out.println(stringBuilder.toString());
     }
 
-    public void printWinner(List<Car> winner) {
+    private void printWinner(List<Car> winner) {
         List<String> winnerNames = new ArrayList<>();
         for (Car car : winner) {
             winnerNames.add(car.getName());
