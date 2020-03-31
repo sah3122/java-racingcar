@@ -24,7 +24,6 @@ public class RacingGameService {
         for (int i = 0; i < numberOfTime; i++) {
             racingScores.add(executeRacingGame(cars, movingStrategy));
         }
-
         return racingScores;
     }
 
@@ -32,7 +31,7 @@ public class RacingGameService {
         return cars.moveAll(movingStrategy);
     }
 
-    public List<Car> findWinnerInRacingScores(List<Cars> cars) {
+    public Cars findWinnerInRacingScores(List<Cars> cars) {
         Cars lastScore = findLastScore(cars);
         return lastScore.findWinners();
     }
@@ -43,7 +42,7 @@ public class RacingGameService {
 
     public RacingCarResponseDto run(RacingCarRequestDto racingCarRequestDto) {
         List<Cars> cars = executeRacingGameNumberOfTimes(racingCarRequestDto, new RandomMovingStrategy());
-        List<Car> winners = findWinnerInRacingScores(cars);
-        return  new RacingCarResponseDto(cars, winners);
+        Cars winners = findWinnerInRacingScores(cars);
+        return new RacingCarResponseDto(cars, winners);
     }
 }

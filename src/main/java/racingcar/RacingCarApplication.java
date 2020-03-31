@@ -14,7 +14,6 @@ public class RacingCarApplication {
 
         RacingCarResponseDto racingCarResponseDto = racingGameService.run(racingCarRequestDto);
 
-        ResultView resultView = new ResultView();
-        resultView.printResult(racingCarResponseDto);
+        ResultView.printResult(racingCarResponseDto);
     }
 }
